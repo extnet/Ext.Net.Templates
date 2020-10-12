@@ -13,6 +13,18 @@
     <title>Ext.NET web application</title>
 
     <link rel="stylesheet" href="~/resources/css/main.css" />
+
+    <script>
+        var template = '<span style="color:{0};">{1}</span>';
+
+        var change = function (value) {
+            return Ext.String.format(template, (value > 0) ? "green" : "red", value);
+        };
+        
+        var pctChange = function (value) {
+            return Ext.String.format(template, (value > 0) ? "green" : "red", value + "%");
+        };
+    </script>
 </head>
 <body>
     <ext-viewport layout="Border">
@@ -73,9 +85,46 @@
             </ext-container>
             <ext-container
                 region="Center"
-                paddingAsString="30 20 30 50"
-                html="GridPanel Content"
-                />
+                paddingAsString="30 20 30 50">
+                <items>
+                    <ext-gridPanel
+                        title="GridPanel"
+                        width="960"
+                        height="640"
+                        frame="true">
+                        <store>
+                            <ext-store data="Model.GridData">
+                                <fields>
+                                    <ext-dataField name="company" />
+                                    <ext-numberDataField name="price" />
+                                    <ext-numberDataField name="change" />
+                                    <ext-numberDataField name="pctChange" />
+                                    <ext-dateDataField name="lastChange" dateFormat="M/d HH:mmtt" />
+                                </fields>
+                            </ext-store>
+                        </store>
+                        <columns>
+                            <ext-column text="Company" dataIndex="company" flex="1" />
+                            <ext-column text="Price" dataIndex="price" renderer="Ext.util.Format.usMoney" />
+                            <ext-column text="Change" dataIndex="change" renderer="change" />
+                            <ext-column text="Change %" dataIndex="pctChange" renderer="pctChange" />
+                            <ext-dateColumn 
+                                text="Last Updated" 
+                                dataIndex="lastChange" 
+                                width="150" 
+                                format="yyyy-MM-dd" 
+                                />
+                        </columns>
+                        <bbar>
+                            <ext-toolbar>
+                                <items>
+                                    <ext-button text="Print" iconCls="x-md md-icon-print" handler="this.up('grid').print();" />
+                                </items>
+                            </ext-toolbar>
+                        </bbar>
+                    </ext-gridPanel>
+                </items>
+            </ext-container>
         </items>
     </ext-viewport>
 </body>
