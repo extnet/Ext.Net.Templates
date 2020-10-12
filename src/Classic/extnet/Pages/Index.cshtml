@@ -15,70 +15,67 @@
     <link rel="stylesheet" href="~/resources/css/main.css" />
 </head>
 <body>
-    <ext-viewport layout="Fit">
+    <ext-viewport layout="Border">
         <items>
-            <ext-container layout="Border">
+            <ext-container
+                region="North"
+                cls="navbar"
+                paddingAsString="0 20"
+                height="64">
+                <layout>
+                    <ext-hBoxLayout align="Middle" pack="Start" />
+                </layout>
                 <items>
-                    <ext-container
-                        region="North"
-                        cls="navbar"
-                        paddingAsString="0 20"
-                        height="64">
-                        <layout>
-                            <ext-hBoxLayout align="Middle" pack="Start" />
-                        </layout>
-                        <items>
-                            <ext-component
-                                flex="1"
-                                html=@("<a class=\"app-logo\" href=\"/\">Ext.NET App</a>")
-                            />
-                            <ext-component flex="1" />
-                            <ext-component
-                                html=@("<a class=\"link\" href=\"https://ext.net\" target=\"_blank\" rel=\"noopener\">Ext.NET Home</a>")
-                            />
-                        </items>
-                    </ext-container>
-
-                    <ext-container
-                        region="West"
-                        cls="sidebar"
-                        width="240"
-                        paddingAsString="20">
-                        <items>
-                            <ext-button
-                                cls="sidebar-menu-item active"
-                                ui="Light"
-                                width="200"
-                                text="Dashboard"
-                                iconCls="x-md md-icon-dashboard"
-                                textAlign="left"
-                            />
-                            <ext-button
-                                cls="sidebar-menu-item"
-                                ui="Light"
-                                width="200"
-                                text="DirectEvents"
-                                iconCls="x-md md-icon-flash-on"
-                                textAlign="left"
-                            />
-                            <ext-button
-                                cls="sidebar-menu-item"
-                                ui="Light"
-                                width="200"
-                                text="GridPanel"
-                                iconCls="x-md md-icon-grid-on"
-                                textAlign="left"
-                            />
-                        </items>
-                    </ext-container>
-
-                     <ext-container
-                        region="Center"
-                        paddingAsString="30 20 30 50"
-                        html="Content"
-                    ></ext-container>
+                    <ext-component
+                        flex="1"
+                        html=@("<a class=\"app-logo\" href=\"/\">Ext.NET App</a>")
+                        />
+                    <ext-component flex="1" />
+                    <ext-component
+                        html=@("<a class=\"link\" href=\"https://ext.net\" target=\"_blank\" rel=\"noopener\">Ext.NET Home</a>")
+                        />
                 </items>
             </ext-container>
+
+            <ext-container
+                region="West"
+                cls="sidebar"
+                width="240"
+                paddingAsString="20">
+                <items>
+                    <ext-button
+                        cls="sidebar-menu-item active"
+                        ui="Light"
+                        width="200"
+                        text="Dashboard"
+                        iconCls="x-md md-icon-dashboard"
+                        textAlign="left"
+                        />
+                    <ext-button
+                        cls="sidebar-menu-item"
+                        ui="Light"
+                        width="200"
+                        text="DirectEvents"
+                        iconCls="x-md md-icon-flash-on"
+                        textAlign="left"
+                        onClientClick="window.location.href = '/directevents'"
+                        />
+                    <ext-button
+                        cls="sidebar-menu-item"
+                        ui="Light"
+                        width="200"
+                        text="GridPanel"
+                        iconCls="x-md md-icon-grid-on"
+                        textAlign="left"
+                        onClientClick="window.location.href = '/gridpanel'"
+                        />
+                </items>
+            </ext-container>
+            <ext-container
+                region="Center"
+                paddingAsString="30 20 30 50"
+                html="Home Content"
+                />
         </items>
     </ext-viewport>
 </body>
