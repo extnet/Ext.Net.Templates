@@ -1,0 +1,119 @@
+/* Spotless theme color palette.
+   Update, if you're using another theme */
+:root {
+  --gray-100: #f4f4f9;
+  --gray-200: #ededf4;
+  --gray-300: #e2e2e8;
+  --gray-400: #c0c0cc;
+  --gray-500: #7e7e8c;
+  --gray-600: #525260;
+  --gray-700: #434351;
+  --gray-800: #2d2d3a;
+  --gray-900: #1f1f26;
+
+  --primary-100: #e8f3ff;
+  --primary-200: #badbff;
+  --primary-300: #75b8ff;
+  --primary-400: #36a0ff;
+  --primary-500: #1989ff;
+  --primary-600: #007ff2;
+  --primary-700: #005dcc;
+  --primary-800: #0958b7;
+  --primary-900: #00519b;
+
+  --success-100: #e9f8f4;
+  --success-200: #bdeae0;
+  --success-300: #7cd6c1;
+  --success-400: #50c8ac;
+  --success-500: #24ba97;
+  --success-600: #14af87;
+  --success-700: #00a576;
+  --success-800: #00895f;
+  --success-900: #006342;
+
+  --danger-100: #ffebeb;
+  --danger-200: #ffc7c7;
+  --danger-300: #ff9f9f;
+  --danger-400: #fd7777;
+  --danger-500: #fc5656;
+  --danger-600: #f73e3e;
+  --danger-700: #f91c1c;
+  --danger-800: #d60909;
+  --danger-900: #ad0707;
+
+  --warning-100: #fff9e6;
+  --warning-200: #ffecb4;
+  --warning-300: #ffda6a;
+  --warning-400: #ffcd39;
+  --warning-500: #ffc107;
+  --warning-600: #e8a707;
+  --warning-700: #d19000;
+  --warning-800: #935f03;
+  --warning-900: #633d00;
+
+  --info-100: #e8f3ff;
+  --info-200: #badbff;
+  --info-300: #75b8ff;
+  --info-400: #36a0ff;
+  --info-500: #1989ff;
+  --info-600: #007ff2;
+  --info-700: #005dcc;
+  --info-800: #0958b7;
+  --info-900: #00519b;
+}
+
+.link {
+  color: var(--primary-500);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.app-logo {
+  color: var(--gray-900);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.sidebar {
+  background-color: #fff;
+  border-right: 1px solid var(--gray-200);
+}
+
+.sidebar-menu-item {
+  margin-bottom: 6px !important;
+  padding: 14px 12px !important;
+  border-width: 0 !important;
+}
+
+.sidebar-menu-item.x-btn-over {
+  background-color: var(--gray-100) !important;
+}
+
+.sidebar-menu-item.active,
+.sidebar-menu-item.x-btn-over.active {
+  background-color: var(--primary-100) !important;
+}
+
+.sidebar-menu-item.active .x-btn-icon-el,
+.sidebar-menu-item.active .x-btn-inner {
+  color: var(--primary-900);
+}
+
+.sidebar-menu-item.x-focus,
+.sidebar-menu-item.x-btn-pressed {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.sidebar-menu-item .x-btn-inner {
+  font-size: 14px;
+}
