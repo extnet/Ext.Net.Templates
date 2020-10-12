@@ -7,7 +7,7 @@ using Ext.Net.Core;
 namespace test.Pages
 {
     [DirectModel]
-    public class IndexModel : PageModel
+    public class DirectEventsModel : PageModel
     {
         public void OnGet()
         {
