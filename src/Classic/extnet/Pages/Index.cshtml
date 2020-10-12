@@ -73,9 +73,74 @@
             </ext-container>
             <ext-container
                 region="Center"
-                paddingAsString="30 20 30 50"
-                html="Home Content"
-                />
+                paddingAsString="30 20 30 50">
+                <items>
+                    <ext-component html="<h1>Welcome to Ext.NET</h1><p>Start building a new Ext.NET app</p>" />
+                    <ext-container layout="HBox" width="668">
+                        <layout>
+                            <ext-hboxLayout align="Stretch" />
+                        </layout>
+                        <items>
+                            <ext-container layout="VBox" flex="1">
+                                <defaults>
+                                    <ext-add key="bodyPadding" value="20" mode="Raw" />
+                                    <ext-add key="header" value="false" mode="Raw" />
+                                    <ext-add key="frame" value="true" mode="Raw" />
+                                    <ext-add key="width" value="200" mode="Raw" />
+                                </defaults>
+                                <items>
+                                    <ext-panel ui="Light" x-margin="0 20 20 0">
+                                        <content>
+                                            <i>Icon here</i>
+                                            <p>Read the API Docs</p>
+                                        </content>
+                                    </ext-panel>
+                                    <ext-panel ui="Light" x-margin="0 20 0 0">
+                                        <content>
+                                            <i>Icon here</i>
+                                            <p>Community Forums</p>
+                                        </content>
+                                    </ext-panel>
+                                </items>
+                            </ext-container>
+                            <ext-container layout="VBox" flex="1">
+                                <defaults>
+                                    <ext-add key="bodyPadding" value="20" mode="Raw" />
+                                    <ext-add key="header" value="false" mode="Raw" />
+                                    <ext-add key="frame" value="true" mode="Raw" />
+                                    <ext-add key="width" value="200" mode="Raw" />
+                                </defaults>
+                                <items>
+                                    <ext-panel ui="Light" x-margin="0 20 20 0">
+                                        <content>
+                                            <i>Icon here</i>
+                                            <p>Examples Explorer</p>
+                                        </content>
+                                    </ext-panel>
+                                    <ext-panel ui="Light" x-margin="0 20 0 0">
+                                        <content>
+                                            <i>Icon here</i>
+                                            <p>Pro Themes</p>
+                                        </content>
+                                    </ext-panel>
+                                </items>
+                            </ext-container>
+                            <ext-panel 
+                                header="false" 
+                                width="226"
+                                fill="true" 
+                                frame="true"
+                                bodyPadding="20">
+                                <content>
+                                    <i>Icon here</i>
+                                    <p>You can try Ext.NET for free. Commercial use requires the purchase of a license key.</p>
+                                    <ext-button text="Get Ext.NET" ui="Light" width="160" />
+                                </content>
+                            </ext-panel>
+                        </items>
+                    </ext-container>
+                </items>
+            </ext-container>
         </items>
     </ext-viewport>
 </body>
