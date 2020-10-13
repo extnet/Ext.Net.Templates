@@ -53,18 +53,12 @@
                 </nav>
             </content>
         </ext-container>
-        <ext-container
-            region="Center"
-            scrollable="true"
-            paddingAsString="30 20 30 50">
-            <items>
-                <ext-button 
-                    text="Click Me!" 
-                    iconCls="x-md md-icon-check-circle-outline"
-                    onDirectClick="ButtonClick" 
-                    scale="Medium" 
-                    />
-            </items>
+        <ext-container region="Center" scrollable="true" paddingAsString="30 20 30 50">
+            <content>
+                <h1>DirectEvent</h1>
+
+                <ext-button text="Click me" onDirectClick="ButtonClick" />
+            </content>
         </ext-container>
     </items>
 </ext-viewport>

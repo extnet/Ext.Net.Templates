@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using Ext.Net;
 using Ext.Net.Core;
+using System;
 
 namespace Company.WebApplication.Pages
 {
@@ -14,10 +15,12 @@ namespace Company.WebApplication.Pages
 
         }
 
+        int count = 0;
+
         [Direct]
         public IActionResult OnPostButtonClick()
         {
-            this.X().Toast("Button Clicked 👍");
+            this.X().Toast($"Server Time is { DateTime.Now.ToString("H:mm:ss tt") } 👍");
 
             return this.Direct();
         }
