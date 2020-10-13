@@ -1,150 +1,147 @@
 ﻿@page  "{handler?}"
-@model test.Pages.IndexModel
+@model Company.WebApplication.Pages.IndexModel
+@using Company.WebApplication.Data
 @{
-    Layout = null;
+    ViewData["Title"] = "Home page";
 }
+<ext-viewport layout="Border">
+    <items>
+        <ext-container
+            region="North"
+            cls="navbar"
+            paddingAsString="0 20"
+            height="64">
+            <layout>
+                <ext-hBoxLayout align="Middle" pack="Start" />
+            </layout>
+            <items>
+                <ext-component flex="1" html=@("<a class=\"app-logo\" href=\"/\">Ext.NET App</a>") />
+                <ext-component flex="1" />
+                <ext-component html=@("<a class=\"link\" href=\"https://ext.net/\" target=\"_blank\" rel=\"noopener\">Ext.NET Home</a>") />
+            </items>
+        </ext-container>
 
-<!DOCTYPE html>
+        <ext-container
+            region="West"
+            cls="sidebar"
+            width="240"
+            paddingAsString="20">
+            <content>
+                <nav>
+                    <ul>
+                    @{
+                        foreach(var item in NavData.Items)
+                        {
+                            var active = HttpContext.Request.Path == @item.Path ? " active" : "";
+                            var cls = $"sidebar-menu-item{active}";
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ext.NET web application</title>
-    <ext-resourceManager />
-    
-    <link rel="stylesheet" href="~/resources/css/main.css" />
-</head>
-<body>
-    <ext-viewport layout="Border">
-        <items>
-            <ext-container
-                region="North"
-                cls="navbar"
-                paddingAsString="0 20"
-                height="64">
-                <layout>
-                    <ext-hBoxLayout align="Middle" pack="Start" />
-                </layout>
-                <items>
-                    <ext-component
-                        flex="1"
-                        html=@("<a class=\"app-logo\" href=\"/\">Ext.NET App</a>")
-                        />
-                    <ext-component flex="1" />
-                    <ext-component
-                        html=@("<a class=\"link\" href=\"https://ext.net\" target=\"_blank\" rel=\"noopener\">Ext.NET Home</a>")
-                        />
-                </items>
-            </ext-container>
+                            <li><a href="@item.Path" class="@(cls)">@item.Name</a></li>
+                        }
+                    }
+                    </ul>
+                </nav>
+            </content>
+            @* <items>
+                <ext-button
+                    cls="sidebar-menu-item active"
+                    ui="Light"
+                    width="200"
+                    text="Dashboard"
+                    iconCls="x-md md-icon-dashboard"
+                    textAlign="left"
+                    />
+                <ext-button
+                    cls="sidebar-menu-item"
+                    ui="Light"
+                    width="200"
+                    text="DirectEvents"
+                    iconCls="x-md md-icon-flash-on"
+                    textAlign="left"
+                    onClientClick="window.location.href = '/directevents'"
+                    />
+                <ext-button
+                    cls="sidebar-menu-item"
+                    ui="Light"
+                    width="200"
+                    text="GridPanel"
+                    iconCls="x-md md-icon-grid-on"
+                    textAlign="left"
+                    onClientClick="window.location.href = '/gridpanel'"
+                    />
+            </items> *@
+        </ext-container>
 
-            <ext-container
-                region="West"
-                cls="sidebar"
-                width="240"
-                paddingAsString="20">
-                <items>
-                    <ext-button
-                        cls="sidebar-menu-item active"
-                        ui="Light"
-                        width="200"
-                        text="Dashboard"
-                        iconCls="x-md md-icon-dashboard"
-                        textAlign="left"
-                        />
-                    <ext-button
-                        cls="sidebar-menu-item"
-                        ui="Light"
-                        width="200"
-                        text="DirectEvents"
-                        iconCls="x-md md-icon-flash-on"
-                        textAlign="left"
-                        onClientClick="window.location.href = '/directevents'"
-                        />
-                    <ext-button
-                        cls="sidebar-menu-item"
-                        ui="Light"
-                        width="200"
-                        text="GridPanel"
-                        iconCls="x-md md-icon-grid-on"
-                        textAlign="left"
-                        onClientClick="window.location.href = '/gridpanel'"
-                        />
-                </items>
-            </ext-container>
-            <ext-container
-                region="Center"
-                paddingAsString="30 20 30 50">
-                <items>
-                    <ext-component html="<h1>Welcome to Ext.NET</h1><p>Start building a new Ext.NET app</p>" />
-                    <ext-container layout="HBox" width="668" x-margin="40 0">
-                        <layout>
-                            <ext-hboxLayout align="Stretch" />
-                        </layout>
-                        <items>
-                            <ext-container layout="VBox" flex="1">
-                                <defaults>
-                                    <ext-add key="bodyPadding" value="20" mode="Raw" />
-                                    <ext-add key="header" value="false" mode="Raw" />
-                                    <ext-add key="frame" value="true" mode="Raw" />
-                                    <ext-add key="width" value="200" mode="Raw" />
-                                    <ext-add key="flex" value="1" mode="Raw" />
-                                </defaults>
-                                <items>
-                                    <ext-panel ui="Light" x-margin="0 20 20 0">
-                                        <content>
-                                            <i>Icon here</i>
-                                            <p>Read the API Docs</p>
-                                        </content>
-                                    </ext-panel>
-                                    <ext-panel ui="Light" x-margin="0 20 0 0">
-                                        <content>
-                                            <i>Icon here</i>
-                                            <p>Community Forums</p>
-                                        </content>
-                                    </ext-panel>
-                                </items>
-                            </ext-container>
-                            <ext-container layout="VBox" flex="1">
-                                <defaults>
-                                    <ext-add key="bodyPadding" value="20" mode="Raw" />
-                                    <ext-add key="header" value="false" mode="Raw" />
-                                    <ext-add key="frame" value="true" mode="Raw" />
-                                    <ext-add key="width" value="200" mode="Raw" />
-                                    <ext-add key="flex" value="1" mode="Raw" />
-                                </defaults>
-                                <items>
-                                    <ext-panel ui="Light" x-margin="0 20 20 0">
-                                        <content>
-                                            <i>Icon here</i>
-                                            <p>Examples Explorer</p>
-                                        </content>
-                                    </ext-panel>
-                                    <ext-panel ui="Light" x-margin="0 20 0 0">
-                                        <content>
-                                            <i>Icon here</i>
-                                            <p>Pro Themes</p>
-                                        </content>
-                                    </ext-panel>
-                                </items>
-                            </ext-container>
-                            <ext-panel 
-                                header="false" 
-                                width="226"
-                                fill="true" 
-                                frame="true"
-                                bodyPadding="20">
-                                <content>
-                                    <i>Icon here</i>
-                                    <p>You can try Ext.NET for free. Commercial use requires the purchase of a license key.</p>
-                                    <ext-button text="Get Ext.NET" ui="Light" width="160" />
-                                </content>
-                            </ext-panel>
-                        </items>
-                    </ext-container>
-                </items>
-            </ext-container>
-        </items>
-    </ext-viewport>
-</body>
-</html>
+        <ext-container
+            region="Center"
+            paddingAsString="30 20 30 50">
+            <items>
+                <ext-component html="<h1>Welcome to Ext.NET</h1><p>Start building a new Ext.NET app</p>" />
+                <ext-container layout="HBox" width="668" x-margin="40 0">
+                    <layout>
+                        <ext-hboxLayout align="Stretch" />
+                    </layout>
+                    <items>
+                        <ext-container layout="VBox" flex="1">
+                            <defaults>
+                                <ext-add key="bodyPadding" value="20" mode="Raw" />
+                                <ext-add key="header" value="false" mode="Raw" />
+                                <ext-add key="frame" value="true" mode="Raw" />
+                                <ext-add key="width" value="200" mode="Raw" />
+                                <ext-add key="flex" value="1" mode="Raw" />
+                            </defaults>
+                            <items>
+                                <ext-panel ui="Light" x-margin="0 20 20 0">
+                                    <content>
+                                        <i>Icon here</i>
+                                        <p>Read the API Docs</p>
+                                    </content>
+                                </ext-panel>
+                                <ext-panel ui="Light" x-margin="0 20 0 0">
+                                    <content>
+                                        <i>Icon here</i>
+                                        <p>Community Forums</p>
+                                    </content>
+                                </ext-panel>
+                            </items>
+                        </ext-container>
+                        <ext-container layout="VBox" flex="1">
+                            <defaults>
+                                <ext-add key="bodyPadding" value="20" mode="Raw" />
+                                <ext-add key="header" value="false" mode="Raw" />
+                                <ext-add key="frame" value="true" mode="Raw" />
+                                <ext-add key="width" value="200" mode="Raw" />
+                                <ext-add key="flex" value="1" mode="Raw" />
+                            </defaults>
+                            <items>
+                                <ext-panel ui="Light" x-margin="0 20 20 0">
+                                    <content>
+                                        <i>Icon here</i>
+                                        <p>Examples Explorer</p>
+                                    </content>
+                                </ext-panel>
+                                <ext-panel ui="Light" x-margin="0 20 0 0">
+                                    <content>
+                                        <i>Icon here</i>
+                                        <p>Pro Themes</p>
+                                    </content>
+                                </ext-panel>
+                            </items>
+                        </ext-container>
+                        <ext-panel 
+                            header="false" 
+                            width="226"
+                            fill="true" 
+                            frame="true"
+                            bodyPadding="20">
+                            <content>
+                                <i>Icon here</i>
+                                <p>You can try Ext.NET for free. Commercial use requires the purchase of a license key.</p>
+                                <ext-component html=@("<a href=\"https://ext.net/download/\">Get Ext.NET</a>") />
+                            </content>
+                        </ext-panel>
+                    </items>
+                </ext-container>
+            </items>
+        </ext-container>
+    </items>
+</ext-viewport>

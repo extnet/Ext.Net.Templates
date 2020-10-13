@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Ext.Net;
 using Ext.Net.Core;
 
-namespace test.Pages
+namespace Company.WebApplication.Pages
 {
     [DirectModel]
     public class DirectEventsModel : PageModel

@@ -5,7 +5,7 @@ using Ext.Net;
 using Ext.Net.Core;
 using System.Collections.Generic;
 
-namespace test.Pages
+namespace Company.WebApplication.Pages
 {
     [DirectModel]
     public class GridPanelModel : PageModel
