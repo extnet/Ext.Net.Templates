@@ -27,48 +27,20 @@
             width="240"
             paddingAsString="20">
             <content>
-                <nav>
+                <nav class="sidebar-nav">
                     <ul>
                     @{
                         foreach(var item in NavData.Items)
                         {
                             var active = HttpContext.Request.Path == @item.Path ? " active" : "";
-                            var cls = $"sidebar-menu-item{active}";
+                            var cls = $"sidebar-nav-link{active}";
 
-                            <li><a href="@item.Path" class="@(cls)">@item.Name</a></li>
+                            <li><a href="@item.Path" class="@(cls)"><i class="x-md">@item.IconCls</i><span>@item.Name</span></a></li>
                         }
                     }
                     </ul>
                 </nav>
             </content>
-            @* <items>
-                <ext-button
-                    cls="sidebar-menu-item active"
-                    ui="Light"
-                    width="200"
-                    text="Dashboard"
-                    iconCls="x-md md-icon-dashboard"
-                    textAlign="left"
-                    />
-                <ext-button
-                    cls="sidebar-menu-item"
-                    ui="Light"
-                    width="200"
-                    text="DirectEvents"
-                    iconCls="x-md md-icon-flash-on"
-                    textAlign="left"
-                    onClientClick="window.location.href = '/directevents'"
-                    />
-                <ext-button
-                    cls="sidebar-menu-item"
-                    ui="Light"
-                    width="200"
-                    text="GridPanel"
-                    iconCls="x-md md-icon-grid-on"
-                    textAlign="left"
-                    onClientClick="window.location.href = '/gridpanel'"
-                    />
-            </items> *@
         </ext-container>
 
         <ext-container

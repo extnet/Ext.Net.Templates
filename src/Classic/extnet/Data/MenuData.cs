@@ -8,8 +8,8 @@ namespace Company.WebApplication.Data
         public static List<NavItem> Items = new List<NavItem>
         { 
             new NavItem("Dashboard", "/", "dashboard"),
-            new NavItem("DirectEvents", "/directevents/", "flash-on"),
-            new NavItem("GridPanel", "/gridpanel/", "grid-on")
+            new NavItem("DirectEvents", "/directevents/", "flash_on"),
+            new NavItem("GridPanel", "/gridpanel/", "grid_on")
         };
     }
 

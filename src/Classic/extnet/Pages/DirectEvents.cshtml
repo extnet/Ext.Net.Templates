@@ -32,15 +32,15 @@
             width="240"
             paddingAsString="20">
             <content>
-                <nav>
+                <nav class="sidebar-nav">
                     <ul>
                     @{
                         foreach(var item in NavData.Items)
                         {
                             var active = HttpContext.Request.Path == @item.Path ? " active" : "";
-                            var cls = $"sidebar-menu-item{active}";
+                            var cls = $"sidebar-nav-link{active}";
 
-                            <li><a href="@item.Path" class="@(cls)">@item.Name</a></li>
+                            <li><a href="@item.Path" class="@(cls)"><i class="x-md">@item.IconCls</i><span>@item.Name</span></a></li>
                         }
                     }
                     </ul>
