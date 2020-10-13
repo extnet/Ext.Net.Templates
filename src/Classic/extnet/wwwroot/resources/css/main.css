@@ -165,3 +165,44 @@
   color: var(--primary-200);
   font-size: 52px;
 }
+
+/* ******************************** */
+/* Headings                         */
+/* ******************************** */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--gray-900);
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.3;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.3;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
