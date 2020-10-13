@@ -62,15 +62,6 @@
   --info-900: #00519b;
 }
 
-.link {
-  color: var(--primary-500);
-  text-decoration: none;
-}
-
-.link:hover {
-  text-decoration: underline;
-}
-
 /* Layout */
 
 .navbar {
