@@ -71,6 +71,8 @@
   text-decoration: underline;
 }
 
+/* Layout */
+
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid var(--gray-200);
@@ -121,4 +123,54 @@
 .sidebar-nav-link i {
   margin-right: 8px;
   font-size: 24px;
+}
+
+/* Dashboard page */
+
+.dashboard-panel {
+  position: relative;
+  text-align: center;
+}
+
+.dashboard-panel .panel-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  transition: all 0.15s ease-out;
+}
+
+.dashboard-panel .panel-link:hover {
+  border-color: var(--primary-500);
+  border-radius: 6px;
+}
+
+.dashboard-panel p {
+  margin: 0;
+}
+
+.dashboard-panel i {
+  font-size: 48px;
+}
+
+.dashboard-panel.docs i {
+  color: var(--primary-500);
+}
+
+.dashboard-panel.examples i {
+  color: var(--gray-900);
+}
+
+.dashboard-panel.forums i {
+  color: var(--success-500);
+}
+.dashboard-panel.themes i {
+  color: var(--warning-500);
+}
+
+.dashboard-panel.action i {
+  color: var(--primary-200);
+  font-size: 52px;
 }
