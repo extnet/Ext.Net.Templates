@@ -60,6 +60,12 @@
   --info-700: #005dcc;
   --info-800: #0958b7;
   --info-900: #00519b;
+
+  --font-size-base: 15px;
+}
+
+html body, p {
+  font-size: var(--font-size-base);
 }
 
 /* Layout */
