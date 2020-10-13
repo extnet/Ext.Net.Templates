@@ -13,13 +13,5 @@ namespace Company.WebApplication.Pages
         {
 
         }
-
-        [Direct]
-        public IActionResult OnPostButtonClick()
-        {
-            this.X().Toast("Button Clicked 👍");
-
-            return this.Direct();
-        }
     }
 }
