@@ -43,19 +43,7 @@
             <items>
                 <ext-container flex="1">
                     <content>
-                        <nav class="sidebar-nav">
-                            <ul>
-                            @{
-                                foreach(var item in NavData.Items)
-                                {
-                                    var active = HttpContext.Request.Path == @item.Path ? " active" : "";
-                                    var cls = $"sidebar-nav-link{active}";
-
-                                    <li><a href="@item.Path" class="@(cls)"><i class="x-md">@item.IconCls</i><span>@item.Name</span></a></li>
-                                }
-                            }
-                            </ul>
-                        </nav>
+                        <partial name="_Navigation" />
                     </content>
                 </ext-container>
                 <ext-label cls="sidebar-footer" html=@("<a href=\"https://ext.net/download\">Ext.NET Classic 7.0.0</a>") />
