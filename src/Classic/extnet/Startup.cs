@@ -13,7 +13,7 @@ using Ext.Net;
 using Ext.Net.Core;
 using Westwind.AspNetCore.LiveReload;
 
-namespace test
+namespace Company.WebApplication
 {
     public class Startup
     {
