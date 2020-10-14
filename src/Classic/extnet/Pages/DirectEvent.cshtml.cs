@@ -15,8 +15,6 @@ namespace Company.WebApplication.Pages
 
         }
 
-        int count = 0;
-
         [Direct]
         public IActionResult OnPostButtonClick()
         {
