@@ -11,10 +11,10 @@ namespace Company.WebApplication.Pages
     public class GridPanelModel : PageModel
     {
         public List<object> GridData { get; set; }
-        
+
         public void OnGet()
         {
-            GridData = new List<object>
+            this.GridData ??= new List<object>
             {
                 new object[] { "3m Co", 71.72, 0.02, 0.03, DateTime.Now.ToString("yyyy-MM-dd hh:mm:tt") },
                 new object[] { "Alcoa Inc", 29.01, 0.42, 1.47, DateTime.Now.ToString("yyyy-MM-dd hh:mm:tt") },
