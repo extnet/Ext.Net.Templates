@@ -1,3 +1,7 @@
+@{
+    var version = "7.0.0";
+    var html = $"<a href=\"https://ext.net/download\">Ext.NET Classic {version}</a>";
+}
 <ext-container
     region="West"
     cls="sidebar"
@@ -13,6 +17,6 @@
                 <partial name="_Navigation" />
             </content>
         </ext-container>
-        <ext-label cls="sidebar-footer" html=@("<a href=\"https://ext.net/download\">Ext.NET Classic 7.0.0</a>") />
+        <ext-label cls="sidebar-footer" html=@html />
     </items>
 </ext-container>
