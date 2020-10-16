@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 using Ext.Net;
 using Ext.Net.Core;
-using System.Collections.Generic;
-using System;
 
 namespace Company.WebApplication.Pages
 {
-    [DirectModel]
     public class GridPanelModel : PageModel
     {
         public List<object> GridData { get; set; }

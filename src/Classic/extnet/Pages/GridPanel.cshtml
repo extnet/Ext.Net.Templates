@@ -1,14 +1,10 @@
 ﻿@page  "{handler?}"
 @model Company.WebApplication.Pages.GridPanelModel
-@using Company.WebApplication.Data
 @{
     ViewData["Title"] = "GridPanel";
 }
 <ext-section target="center">
-    <ext-container
-        region="Center"
-        scrollable="true"
-        paddingAsString="30 20 30 50">
+    <ext-container region="Center" scrollable="true" paddingAsString="30 20 30 50">
         <items>
             <ext-gridPanel
                 title="GridPanel"
@@ -31,12 +27,7 @@
                     <ext-column text="Price" dataIndex="price" renderer="Ext.util.Format.usMoney" />
                     <ext-column text="Change" dataIndex="change" renderer="change" />
                     <ext-column text="Change %" dataIndex="pctChange" renderer="pctChange" />
-                    <ext-dateColumn 
-                        text="Last Updated" 
-                        dataIndex="lastChange" 
-                        width="150" 
-                        format="yyyy-MM-dd" 
-                        />
+                    <ext-dateColumn text="Last Updated" dataIndex="lastChange" width="150" format="yyyy-MM-dd" />
                 </columns>
             </ext-gridPanel>
         </items>
