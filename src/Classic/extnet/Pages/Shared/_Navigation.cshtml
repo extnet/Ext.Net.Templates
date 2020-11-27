@@ -1,15 +1,19 @@
 @using Company.WebApplication.Data
+
 <nav class="sidebar-nav">
     <ul>
-    @{
-        foreach(var item in NavData.Items)
-        {
-            var active = @Context.Request.Path == @item.Path ? " active" : "";
+        @{
+            ViewContext.RouteData.Values.TryGetValue("page", out var currPageObj);
+            var currPage = currPageObj?.ToString();
 
-            var cls = $"sidebar-nav-link{active}";
+            foreach (var item in NavData.Items)
+            {
+                var active = currPage == item.Path ? " active" : "";
 
-            <li><a href="@item.Path" class="@(cls)"><i class="x-md">@item.IconCls</i><span>@item.Name</span></a></li>
+                var cls = $"sidebar-nav-link{active}";
+
+                <li><a href="@Url.Page(@item.Path)" class="@cls"><i class="x-md">@item.IconCls</i><span>@item.Name</span></a></li>
+            }
         }
-    }
     </ul>
 </nav>
