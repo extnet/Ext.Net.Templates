@@ -1,15 +1,18 @@
 @using Company.MvcApplication.Data
 <nav class="sidebar-nav">
     <ul>
-    @{
-        foreach(var item in NavData.Items)
-        {
-            var active = @Context.Request.Path == @item.Path ? " active" : "";
+        @{
+            ViewContext.RouteData.Values.TryGetValue("controller", out var currControllerObj);
+            var currController = currControllerObj?.ToString();
 
-            var cls = $"sidebar-nav-link{active}";
+            foreach (var item in NavData.Items)
+            {
+                var active = currController == item.Path ? " active" : "";
 
-            <li><a href="@item.Path" class="@(cls)"><i class="x-md">@item.IconCls</i><span>@item.Name</span></a></li>
+                var cls = $"sidebar-nav-link{active}";
+
+                <li><a href="@(Url.Action(null, item.Path))" class="@cls"><i class="x-md">@item.IconCls</i><span>@item.Name</span></a></li>
+            }
         }
-    }
     </ul>
 </nav>

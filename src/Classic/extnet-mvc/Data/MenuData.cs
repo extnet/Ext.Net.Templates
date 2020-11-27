@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Company.MvcApplication.Data
@@ -7,15 +6,15 @@ namespace Company.MvcApplication.Data
     {
         public static List<NavItem> Items = new List<NavItem>
         {
-            new NavItem("Dashboard", "/", "dashboard"),
-            new NavItem("DirectEvent", "/directevent/", "flash_on"),
-            new NavItem("GridPanel", "/gridpanel/", "grid_on")
+            new NavItem("Dashboard", "Home", "dashboard"),
+            new NavItem("DirectEvent", "DirectEvent", "flash_on"),
+            new NavItem("GridPanel", "GridPanel", "grid_on")
         };
     }
 
     public class NavItem
     {
-        public NavItem (string name, string path, string iconCls)
+        public NavItem(string name, string path, string iconCls)
         {
             Name = name;
             Path = path;
