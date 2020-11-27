@@ -52,6 +52,10 @@ namespace Company.MvcApplication
             });
 
             services.AddRazorPages().AddRazorRuntimeCompilation();
+            services.AddRouting(config =>
+            {
+                config.LowercaseUrls = true;
+            });
 
             // See https://github.com/RickStrahl/Westwind.AspnetCore.LiveReload
             services.AddLiveReload();
